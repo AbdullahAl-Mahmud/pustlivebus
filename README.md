@@ -1,40 +1,36 @@
-# pustlivebus
+# PUST LiveBus
 
-The latest offline schedules, separate fixed routes, departure board, driver trips and admin editor are documented in [Features and setup](docs/FEATURES_AND_SETUP.md). Start there for current behavior, Firebase setup and verification commands.
+Flutter application for PUST bus schedules, fixed routes and authorized driver GPS sharing.
 
-Flutter application for PUST bus schedules and authorized driver GPS sharing.
+## Downloads
 
-## Current features
+- [Latest Android APK — 1.0.3, ARM64](https://github.com/AbdullahAl-Mahmud/pustlivebus/releases/download/v1.0.3/PUST-LiveBus-1.0.3-arm64.apk)
+- [Web build — 1.0.3](https://github.com/AbdullahAl-Mahmud/pustlivebus/releases/download/v1.0.3/PUST-LiveBus-Web-1.0.3.zip)
+- [Source code — 1.0.3](https://github.com/AbdullahAl-Mahmud/pustlivebus/archive/refs/tags/v1.0.3.zip)
+- [All files, including older APKs](https://github.com/AbdullahAl-Mahmud/pustlivebus/releases/tag/v1.0.3)
+- [Live website](https://pustlivebus.web.app)
 
-- Student and driver entry screens with a responsive welcome layout.
-- Search by bus name, number, route or stop, including Bengali text.
-- All buses and live-only filters, daily departures and countdowns.
-- Ordered route stop timelines, including return-route stops.
-- Bangladesh time (UTC+6) and Friday holiday schedule selection.
-- OpenStreetMap display, driver sign-in and assigned-bus GPS sharing.
+APKs are testing builds signed with the existing debug key. The current APK requires an ARM64 Android device running Android 7.0 or newer. Older APKs are retained for reference; source and web downloads correspond to 1.0.3. [Download details](docs/DOWNLOADS.md).
 
-Timelines show scheduled stop order, not live progress. Search covers all configured schedules; trip details show today's schedule. Missing holiday schedules are reported explicitly.
+## Features
 
-## Original implementation roadmap
+- Offline timetables, fixed routes, stop search, favourites and a departure board.
+- Authorized driver sign-in, assigned buses, trip start/end and separate map/history pages.
+- Driver and student stop progress, next-stop estimates and ordered stop timelines.
+- Optional student location for nearby-stop estimates; student GPS is not the official bus position.
+- Admin management of buses, routes, stops, schedules and driver assignments.
+- Bengali stop names, Bangladesh time, holiday schedules and dark mode.
 
-Trip sessions, selected-bus maps, offline storage, admin forms, in-app timetable reminders and dark mode now have local implementations. Live Firebase permissions/account claims need separate setup. Accurate route-based ETA, background notifications, complete language switching and analytics remain future work; see the current setup guide above.
+GPS progress requires fresh driver fixes and a reliable route match. Arrival times are approximate and still require real bus trials. [Features and setup](docs/FEATURES_AND_SETUP.md) and [campus pilot plan](docs/CAMPUS_PILOT_AND_LAUNCH_PLAN_BN.md) explain the current limits.
 
-New live GPS updates require internet. Student GPS is not used as the official bus position. Firebase database rules must enforce driver assignments; those rules were not available for verification here. No remote database records were changed during this development work.
+## Development
 
-## Verification
+```sh
+flutter pub get
+flutter analyze
+flutter test
+flutter run -d chrome
+flutter build web --release --target lib/main.dart
+```
 
-Run `flutter analyze` and `flutter test`, then `flutter run -d chrome` for the web app. Validate GPS and foreground tracking on a physical Android device. The supplied conversation and images are references for planned features; confirm the printed schedules before changing production data.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+On the original Windows machine, `powershell -NoProfile -File tools/build-apk.ps1 -TargetPlatform android-arm64` produces the testing APK. Configure your own Firebase project and authorized accounts when using another backend. Passwords, service-account keys, signing keys, local database backups, caches and dependencies are excluded from Git.
