@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "969509637399",
+    "firebase_url": "https://pustlivebus-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "pustlivebus",
+    "storage_bucket": "pustlivebus.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969509637399:android:f31e1935f654f582efbb52",
+        "android_client_info": {
+          "package_name": "com.pustlivebus.pustlivebus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI92tOx_Mox-uHi6g7r6dm50LgVUAxpOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

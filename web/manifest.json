@@ -1,0 +1,19 @@
+{
+  "name": "PUST LiveBus",
+  "short_name": "PUST Bus",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F5F1EA",
+  "theme_color": "#7D2638",
+  "description": "PUST bus schedules, fixed routes and driver GPS tracking.",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/pust-mobility.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

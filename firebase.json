@@ -1,0 +1,50 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "pustlivebus",
+          "appId": "1:969509637399:android:f31e1935f654f582efbb52",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "pustlivebus",
+          "configurations": {
+            "android": "1:969509637399:android:f31e1935f654f582efbb52",
+            "ios": "1:969509637399:ios:b41141da3af84479efbb52",
+            "macos": "1:969509637399:ios:b41141da3af84479efbb52",
+            "web": "1:969509637399:web:d78feca2a10fc958efbb52",
+            "windows": "1:969509637399:web:c99cfb99da20234befbb52"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      }
+    ]
+  }
+}

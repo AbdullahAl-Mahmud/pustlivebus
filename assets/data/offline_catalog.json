@@ -1,0 +1,481 @@
+{
+  "schemaVersion": 1,
+  "meta": {
+    "source": "User-supplied printed timetable and coordinate list",
+    "effectiveFrom": "2026-10-31",
+    "verified": false,
+    "note": "Reference copy transcribed from supplied images. Confirm times and routes with the transport office. Return paths expanded from “same route”; no intermediate arrival times are supplied."
+  },
+  "buses": {
+    "bus04": {
+      "nameBn": "বাস-৪ : পদ্মা",
+      "name": "Padma",
+      "number": 4,
+      "active": true
+    },
+    "bus05": {
+      "nameBn": "বাস-৫ : মেঘনা",
+      "name": "Meghna",
+      "number": 5,
+      "active": true
+    },
+    "bus06": {
+      "nameBn": "বাস-৬ : যমুনা",
+      "name": "Jamuna",
+      "number": 6,
+      "active": true
+    },
+    "bus07": {
+      "nameBn": "বাস-৭ : ইছামতি",
+      "name": "Ichamati",
+      "number": 7,
+      "active": true
+    },
+    "bus08": {
+      "nameBn": "বাস-৮ : তিস্তা",
+      "name": "Tista",
+      "number": 8,
+      "active": true
+    },
+    "bus09": {
+      "nameBn": "বাস-৯ : কর্ণফুলী",
+      "name": "Karnaphuli",
+      "number": 9,
+      "active": true
+    },
+    "brtc10": {
+      "nameBn": "বিআরটিসি-১০",
+      "name": "BRTC 10",
+      "number": 10,
+      "active": true
+    },
+    "brtc11": {
+      "nameBn": "বিআরটিসি-১১",
+      "name": "BRTC 11",
+      "number": 11,
+      "active": true
+    }
+  },
+  "stops": {
+    "campus": {
+      "nameBn": "ক্যাম্পাস",
+      "nameEn": "Campus",
+      "lat": 24.014420395333396,
+      "lng": 89.27924393244258
+    },
+    "terminal": {
+      "nameBn": "টার্মিনাল",
+      "nameEn": "Terminal",
+      "lat": 24.007396227242925,
+      "lng": 89.25844340113557
+    },
+    "mujahid_club": {
+      "nameBn": "মোজাহিদ ক্লাব",
+      "nameEn": "Mujahid Club",
+      "lat": 24.006419327777213,
+      "lng": 89.24903545471534
+    },
+    "anonto": {
+      "nameBn": "অনন্ত",
+      "nameEn": "Anonto",
+      "lat": 23.999137478591035,
+      "lng": 89.24548814242041
+    },
+    "court": {
+      "nameBn": "কোর্ট",
+      "nameEn": "Court",
+      "lat": 24.000561550832362,
+      "lng": 89.23258856640486
+    },
+    "shohor": {
+      "nameBn": "শহর",
+      "nameEn": "Pabna Town",
+      "lat": 24.006678920327342,
+      "lng": 89.2371532323025
+    },
+    "collegiate": {
+      "nameBn": "কলেজিয়েট",
+      "nameEn": "Collegiate"
+    },
+    "gachpara": {
+      "nameBn": "গাছপাড়া",
+      "nameEn": "Gachpara",
+      "lat": 24.031762575148253,
+      "lng": 89.22645196940417
+    },
+    "meril": {
+      "nameBn": "মেরিল বাইপাস",
+      "nameEn": "Meril Bypass",
+      "lat": 24.02242682538704,
+      "lng": 89.24958707334874
+    },
+    "moktob": {
+      "nameBn": "মক্তব মোড়",
+      "nameEn": "Moktob Mor",
+      "lat": 24.01600872761796,
+      "lng": 89.23461257905363
+    },
+    "tebunia": {
+      "nameBn": "টেবুনিয়া",
+      "nameEn": "Tebunia",
+      "lat": 24.071386931012185,
+      "lng": 89.20784708367322
+    },
+    "dashuria": {
+      "nameBn": "দাশুড়িয়া",
+      "nameEn": "Dashuria",
+      "lat": 24.113265918122615,
+      "lng": 89.11883576902632
+    },
+    "ishwardi": {
+      "nameBn": "ঈশ্বরদী বাস টার্মিনাল",
+      "nameEn": "Ishwardi Bus Terminal",
+      "lat": 24.123602623103846,
+      "lng": 89.06437062522579
+    },
+    "munsurabad": {
+      "nameBn": "মনসুরাবাদ",
+      "nameEn": "Munsurabad",
+      "lat": 24.0114398147723,
+      "lng": 89.27262479375223
+    },
+    "hajirhat": {
+      "nameBn": "হাজির হাট",
+      "nameEn": "Hajir Hat",
+      "lat": 24.00028705613652,
+      "lng": 89.26242874663745
+    },
+    "dubolia": {
+      "nameBn": "দুবলিয়া",
+      "nameEn": "Dubolia",
+      "lat": 24.007791649746522,
+      "lng": 89.2384838293015
+    },
+    "sujanagar": {
+      "nameBn": "সুজানগর",
+      "nameEn": "Sujanagar",
+      "lat": 23.93956826308305,
+      "lng": 89.4077992621716
+    },
+    "bagchipara": {
+      "nameBn": "বাগচিপাড়া",
+      "nameEn": "Bagchipara",
+      "lat": 24.0229303853771,
+      "lng": 89.29682743759169
+    },
+    "pushpopara": {
+      "nameBn": "পুষ্পপাড়া",
+      "nameEn": "Pushpopara"
+    },
+    "kuchiamora": {
+      "nameBn": "কুচিয়ামোড়া",
+      "nameEn": "Kuchiamora"
+    },
+    "ataikula": {
+      "nameBn": "আতাইকুলা",
+      "nameEn": "Ataikula",
+      "lat": 24.03201288236389,
+      "lng": 89.41130564326697
+    },
+    "madhpur": {
+      "nameBn": "মাধপুর",
+      "nameEn": "Madhpur",
+      "lat": 24.030689421011786,
+      "lng": 89.45089169704387
+    }
+  },
+  "routes": {
+    "town_loop": {
+      "name": "ক্যাম্পাস → শহর → ক্যাম্পাস",
+      "stops": [
+        "campus",
+        "terminal",
+        "mujahid_club",
+        "anonto",
+        "court",
+        "shohor",
+        "collegiate",
+        "gachpara",
+        "meril",
+        "terminal",
+        "campus"
+      ]
+    },
+    "town_reverse": {
+      "name": "ক্যাম্পাস → মেরিল → শহর → ক্যাম্পাস",
+      "stops": [
+        "campus",
+        "terminal",
+        "meril",
+        "gachpara",
+        "moktob",
+        "shohor",
+        "court",
+        "anonto",
+        "mujahid_club",
+        "terminal",
+        "campus"
+      ]
+    },
+    "ishwardi": {
+      "name": "ক্যাম্পাস → ঈশ্বরদী → ক্যাম্পাস",
+      "stops": [
+        "campus",
+        "terminal",
+        "meril",
+        "gachpara",
+        "tebunia",
+        "dashuria",
+        "ishwardi",
+        "dashuria",
+        "tebunia",
+        "gachpara",
+        "meril",
+        "terminal",
+        "campus"
+      ]
+    },
+    "sujanagar": {
+      "name": "ক্যাম্পাস → সুজানগর → ক্যাম্পাস",
+      "stops": [
+        "campus",
+        "munsurabad",
+        "hajirhat",
+        "dubolia",
+        "sujanagar",
+        "dubolia",
+        "hajirhat",
+        "munsurabad",
+        "campus"
+      ]
+    },
+    "sujanagar_afternoon": {
+      "name": "ক্যাম্পাস → অনন্ত → সুজানগর → ক্যাম্পাস",
+      "stops": [
+        "campus",
+        "munsurabad",
+        "anonto",
+        "dubolia",
+        "sujanagar",
+        "dubolia",
+        "anonto",
+        "munsurabad",
+        "campus"
+      ]
+    },
+    "madhpur": {
+      "name": "ক্যাম্পাস → মাধপুর → ক্যাম্পাস",
+      "stops": [
+        "campus",
+        "bagchipara",
+        "pushpopara",
+        "kuchiamora",
+        "ataikula",
+        "madhpur",
+        "ataikula",
+        "kuchiamora",
+        "pushpopara",
+        "bagchipara",
+        "campus"
+      ]
+    }
+  },
+  "schedules": {
+    "reference_1": {
+      "busId": "bus04",
+      "departTime": "08:10",
+      "audience": "male",
+      "routeId": "town_loop",
+      "dayType": "regular"
+    },
+    "reference_2": {
+      "busId": "bus06",
+      "departTime": "08:10",
+      "audience": "female",
+      "routeId": "town_loop",
+      "dayType": "regular"
+    },
+    "reference_3": {
+      "busId": "bus05",
+      "departTime": "07:10",
+      "audience": "both",
+      "routeId": "ishwardi",
+      "dayType": "regular"
+    },
+    "reference_4": {
+      "busId": "bus09",
+      "departTime": "07:00",
+      "audience": "both",
+      "routeId": "sujanagar",
+      "dayType": "regular"
+    },
+    "reference_5": {
+      "busId": "bus07",
+      "departTime": "07:30",
+      "audience": "both",
+      "routeId": "madhpur",
+      "dayType": "regular"
+    },
+    "reference_6": {
+      "busId": "brtc10",
+      "departTime": "08:00",
+      "audience": "female",
+      "routeId": "town_reverse",
+      "dayType": "regular"
+    },
+    "reference_7": {
+      "busId": "brtc11",
+      "departTime": "08:00",
+      "audience": "male",
+      "routeId": "town_reverse",
+      "dayType": "regular"
+    },
+    "reference_8": {
+      "busId": "bus04",
+      "departTime": "11:10",
+      "audience": "female",
+      "routeId": "town_reverse",
+      "dayType": "regular"
+    },
+    "reference_9": {
+      "busId": "bus08",
+      "departTime": "11:10",
+      "audience": "male",
+      "routeId": "town_loop",
+      "dayType": "regular"
+    },
+    "reference_10": {
+      "busId": "bus05",
+      "departTime": "11:10",
+      "audience": "female",
+      "routeId": "town_loop",
+      "dayType": "regular"
+    },
+    "reference_11": {
+      "busId": "brtc11",
+      "departTime": "11:10",
+      "audience": "male",
+      "routeId": "town_reverse",
+      "dayType": "regular"
+    },
+    "reference_12": {
+      "busId": "bus06",
+      "departTime": "13:15",
+      "audience": "female",
+      "routeId": "town_loop",
+      "dayType": "regular"
+    },
+    "reference_13": {
+      "busId": "bus04",
+      "departTime": "13:15",
+      "audience": "male",
+      "routeId": "town_reverse",
+      "dayType": "regular"
+    },
+    "reference_14": {
+      "busId": "bus05",
+      "departTime": "13:15",
+      "audience": "both",
+      "routeId": "town_reverse",
+      "dayType": "regular"
+    },
+    "reference_15": {
+      "busId": "bus07",
+      "departTime": "13:15",
+      "audience": "male",
+      "routeId": "town_loop",
+      "dayType": "regular"
+    },
+    "reference_16": {
+      "busId": "bus08",
+      "departTime": "13:15",
+      "audience": "male",
+      "routeId": "town_reverse",
+      "dayType": "regular"
+    },
+    "reference_17": {
+      "busId": "bus09",
+      "departTime": "13:15",
+      "audience": "male",
+      "routeId": "town_reverse",
+      "dayType": "regular"
+    },
+    "reference_18": {
+      "busId": "bus04",
+      "departTime": "16:10",
+      "audience": "male",
+      "routeId": "town_loop",
+      "dayType": "regular"
+    },
+    "reference_19": {
+      "busId": "bus06",
+      "departTime": "16:10",
+      "audience": "female",
+      "routeId": "town_loop",
+      "dayType": "regular"
+    },
+    "reference_20": {
+      "busId": "bus05",
+      "departTime": "16:10",
+      "audience": "both",
+      "routeId": "ishwardi",
+      "dayType": "regular"
+    },
+    "reference_21": {
+      "busId": "bus09",
+      "departTime": "16:10",
+      "audience": "both",
+      "routeId": "sujanagar_afternoon",
+      "dayType": "regular"
+    },
+    "reference_22": {
+      "busId": "bus07",
+      "departTime": "16:10",
+      "audience": "both",
+      "routeId": "madhpur",
+      "dayType": "regular"
+    },
+    "reference_23": {
+      "busId": "brtc10",
+      "departTime": "16:10",
+      "audience": "female",
+      "routeId": "town_reverse",
+      "dayType": "regular"
+    },
+    "reference_24": {
+      "busId": "brtc11",
+      "departTime": "16:10",
+      "audience": "male",
+      "routeId": "town_reverse",
+      "dayType": "regular"
+    },
+    "reference_25": {
+      "busId": "brtc10",
+      "departTime": "07:20",
+      "audience": "both",
+      "routeId": "town_loop",
+      "dayType": "holiday"
+    },
+    "reference_26": {
+      "busId": "brtc11",
+      "departTime": "07:20",
+      "audience": "both",
+      "routeId": "town_reverse",
+      "dayType": "holiday"
+    },
+    "reference_27": {
+      "busId": "brtc10",
+      "departTime": "20:00",
+      "audience": "both",
+      "routeId": "town_loop",
+      "dayType": "holiday"
+    },
+    "reference_28": {
+      "busId": "brtc11",
+      "departTime": "21:00",
+      "audience": "both",
+      "routeId": "town_reverse",
+      "dayType": "holiday"
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "buses": {
+      ".read": true,
+      "$busId": {
+        ".write": "auth != null && auth.token.admin === true && (!data.exists() || !root.child('activeTrips').child($busId).exists() || (newData.exists() && newData.child('active').val() !== false))",
+        ".validate": "((newData.child('nameBn').isString() && newData.child('nameBn').val().length > 0) || (newData.child('name').isString() && newData.child('name').val().length > 0)) && newData.child('number').isNumber() && newData.child('number').val() > 0"
+      }
+    },
+    "stops": {
+      ".read": true,
+      "$stopId": {
+        ".write": "auth != null && auth.token.admin === true",
+        ".validate": "((newData.child('nameBn').isString() && newData.child('nameBn').val().length > 0) || (newData.child('name').isString() && newData.child('name').val().length > 0)) && ((!newData.child('lat').exists() && !newData.child('lng').exists()) || (newData.child('lat').isNumber() && newData.child('lng').isNumber() && newData.child('lat').val() >= -90 && newData.child('lat').val() <= 90 && newData.child('lng').val() >= -180 && newData.child('lng').val() <= 180))"
+      }
+    },
+    "routes": {
+      ".read": true,
+      "$routeId": {
+        ".write": "auth != null && auth.token.admin === true",
+        ".validate": "((newData.child('nameBn').isString() && newData.child('nameBn').val().length > 0) || (newData.child('name').isString() && newData.child('name').val().length > 0)) && newData.child('stops').hasChildren(['0','1'])",
+        "stops": {
+          "$index": {
+            ".validate": "newData.isString() && root.child('stops').child(newData.val()).exists()"
+          }
+        }
+      }
+    },
+    "schedules": {
+      ".read": true,
+      "$scheduleId": {
+        ".write": "auth != null && auth.token.admin === true",
+        ".validate": "newData.hasChildren(['busId','routeId','departTime','dayType','audience']) && newData.child('busId').isString() && root.child('buses').child(newData.child('busId').val()).exists() && newData.child('routeId').isString() && root.child('routes').child(newData.child('routeId').val()).exists() && newData.child('departTime').isString() && newData.child('departTime').val().matches(/^([01][0-9]|2[0-3]):[0-5][0-9]$/) && (newData.child('dayType').val() === 'regular' || newData.child('dayType').val() === 'holiday') && (newData.child('audience').val() === 'male' || newData.child('audience').val() === 'female' || newData.child('audience').val() === 'both')"
+      }
+    },
+    "calendar": {
+      ".read": true,
+      "$date": {
+        ".write": "auth != null && auth.token.admin === true",
+        ".validate": "$date.matches(/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/) && (newData.val() === 'regular' || newData.val() === 'holiday')"
+      }
+    },
+    "drivers": {
+      ".read": "auth != null && auth.token.admin === true",
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.token.admin === true && (!data.exists() || !root.child('activeTrips').child(data.child('busId').val()).exists()) && (!newData.exists() || !root.child('activeTrips').child(newData.child('busId').val()).exists())",
+        ".validate": "newData.child('busId').isString() && root.child('buses').child(newData.child('busId').val()).exists() && newData.child('name').isString()"
+      }
+    },
+    "activeTrips": {
+      ".read": "auth != null && auth.token.admin === true",
+      "$busId": {
+        ".read": "auth != null && root.child('drivers').child(auth.uid).child('busId').val() === $busId && root.child('drivers').child(auth.uid).child('active').val() !== false",
+        ".write": "(auth != null && auth.token.admin === true) || ((auth != null && root.child('drivers').child(auth.uid).child('busId').val() === $busId && root.child('drivers').child(auth.uid).child('active').val() !== false) && (!data.exists() || data.child('driverUid').val() === auth.uid) && (!newData.exists() || newData.child('driverUid').val() === auth.uid))",
+        ".validate": "newData.hasChildren(['tripId','driverUid','routeId','startedAt']) && newData.child('tripId').isString() && newData.child('driverUid').isString() && newData.child('routeId').isString() && root.child('routes').child(newData.child('routeId').val()).exists() && root.child('routes').child(newData.child('routeId').val()).child('active').val() !== false && root.child('buses').child($busId).child('active').val() !== false && newData.child('startedAt').isNumber() && newData.child('startedAt').val() <= now + 5000 && (!data.exists() || (newData.child('tripId').val() === data.child('tripId').val() && newData.child('driverUid').val() === data.child('driverUid').val() && newData.child('routeId').val() === data.child('routeId').val() && newData.child('startedAt').val() === data.child('startedAt').val()))"
+      }
+    },
+    "live": {
+      ".read": true,
+      "$busId": {
+        ".write": "(auth != null && auth.token.admin === true) || ((auth != null && root.child('drivers').child(auth.uid).child('busId').val() === $busId && root.child('drivers').child(auth.uid).child('active').val() !== false) && newData.exists() && newData.child('driverUid').val() === auth.uid && root.child('activeTrips').child($busId).child('tripId').val() === newData.child('tripId').val() && root.child('activeTrips').child($busId).child('routeId').val() === newData.child('routeId').val())",
+        ".validate": "newData.hasChildren(['lat','lng','accuracy','capturedAt','ts','sharing','tripId','routeId','driverUid']) && newData.child('lat').isNumber() && newData.child('lat').val() >= -90 && newData.child('lat').val() <= 90 && newData.child('lng').isNumber() && newData.child('lng').val() >= -180 && newData.child('lng').val() <= 180 && newData.child('accuracy').isNumber() && newData.child('accuracy').val() >= 0 && newData.child('accuracy').val() <= 100 && newData.child('sharing').isBoolean() && newData.child('ts').isNumber() && newData.child('ts').val() <= now + 5000 && newData.child('capturedAt').isNumber() && (newData.child('sharing').val() === false || (newData.child('capturedAt').val() >= now - 30000 && newData.child('capturedAt').val() <= now + 5000))"
+      }
+    },
+    "trips": {
+      "$busId": {
+        ".read": "(auth != null && auth.token.admin === true) || (auth != null && root.child('drivers').child(auth.uid).child('busId').val() === $busId && root.child('drivers').child(auth.uid).child('active').val() !== false)",
+        ".indexOn": [
+          "startedAt"
+        ],
+        "$tripId": {
+          ".write": "(auth != null && auth.token.admin === true) || ((auth != null && root.child('drivers').child(auth.uid).child('busId').val() === $busId && root.child('drivers').child(auth.uid).child('active').val() !== false) && newData.exists() && newData.child('driverUid').val() === auth.uid && root.child('activeTrips').child($busId).child('tripId').val() === $tripId)",
+          ".validate": "newData.hasChildren(['driverUid','routeId','startedAt','status']) && newData.child('driverUid').isString() && newData.child('routeId').isString() && newData.child('startedAt').isNumber() && newData.child('startedAt').val() <= now + 5000 && ((newData.child('status').val() === 'open' && !newData.child('endedAt').exists()) || (newData.child('status').val() === 'ended' && newData.child('endedAt').isNumber() && newData.child('endedAt').val() >= newData.child('startedAt').val() && newData.child('endedAt').val() <= now + 5000)) && (!data.exists() || (newData.child('driverUid').val() === data.child('driverUid').val() && newData.child('routeId').val() === data.child('routeId').val() && newData.child('startedAt').val() === data.child('startedAt').val() && (data.child('status').val() !== 'ended' || (newData.child('status').val() === 'ended' && newData.child('endedAt').val() === data.child('endedAt').val()))))"
+        }
+      }
+    }
+  }
+}
+
